@@ -110,3 +110,9 @@ class RobotTrajectory(object):
         self.robot.ax.plot_wireframe(x, y, np.array([z]), color="lightblue")
         plt.show()
         return inter_values, inter_time_points
+        
+    def get_inter_values(self, num_segs=100, motion="p2p", method="linear"):
+        # interpolation values
+        inter_values, inter_time_points = self.interpolate(num_segs, motion, method)
+        return inter_values, inter_time_points
+    
